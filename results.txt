@@ -1,3 +1,8 @@
+-- LEONART JAOS
+-- Z1911688
+-- ASSIGNMENT 05
+-- CSCI 466 SECTION 0001
+
 MariaDB [z1911688]> \. ASSIGN05.sql
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
