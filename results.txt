@@ -1,227 +1,496 @@
--- Leonart Jaos
--- ASSIGNMENT 05
--- Z1911688
--- CSCI 466 SECTION NO: 0001
+mariadb  Ver 15.1 Distrib 10.3.27-MariaDB, for debian-linux-gnu (x86_64) using readline 5.2
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
-Tables_in_BabyName
-BabyName
-Field	Type	Null	Key	Default	Extra
-name	varchar(15)	NO	PRI	NULL	
-count	int(11)	YES		NULL	
-gender	char(1)	NO	PRI	NULL	
-year	smallint(6)	NO	PRI	NULL	
-place	char(2)	NO	PRI	NULL	
-name
-Aadam
-Aadil
-Aaditya
-Aailyah
-Aaisha
-Aajah
-Aakash
-Aalayah
-Aaleah
-Aaleyah
-Aalia
-Aaliah
-Aaliayah
-Aaliya
-Aaliyah
-Aaliyha
-Aalliyah
-Aalyah
-Aalyiah
-Aamina
-Aaminah
-Aamir
-Aanchal
-Aanisah
-Aaniyah
-Aanya
-Aanyah
-Aaran
-Aaren
-Aareon
-Aariana
-Aarianna
-Aaric
-Aariel
-Aarika
-Aarin
-Aarion
-Aariona
-Aarionna
-Aaris
-Aarohi
-Aaron
-Aaronmichael
-Aarron
-Aarthi
-Aarti
-Aaryn
-Aasha
-Aashna
-Aasim
-year
-1880
-1881
-1882
-1883
-1884
-1885
-1886
-1887
-1888
-1889
-1890
-1891
-1892
-1893
-1894
-1895
-1896
-1897
-1898
-1899
-1900
-1901
-1902
-1903
-1904
-1905
-1906
-1907
-1908
-1909
-1910
-1911
-1912
-1913
-1914
-1915
-1916
-1917
-1918
-1919
-1920
-1921
-1922
-1923
-1924
-1925
-1926
-1927
-1928
-1929
-gender	name	count
-M	Michael	67731
-F	Jennifer	50562
-place	COUNT(DISTINCT NAME)
-AK	1583
-AL	6501
-AR	4825
-AZ	5500
-CA	18986
-CO	4953
-CT	3531
-DC	2622
-DE	1677
-FL	10820
-GA	9467
-HI	2870
-IA	4257
-ID	2874
-IL	10847
-IN	6392
-KS	4359
-KY	5178
-LA	6957
-MA	5185
-MD	5455
-ME	2146
-MI	8567
-MN	5374
-MO	6301
-MS	5486
-MT	2188
-NC	8598
-ND	2282
-NE	3383
-NH	1756
-NJ	7428
-NM	3333
-NV	2861
-NY	14101
-OH	9066
-OK	5548
-OR	4143
-PA	8851
-RI	1795
-SC	5632
-SD	2289
-TN	6750
-TX	16768
-US	95025
-UT	4489
-VA	7093
-VT	1358
-WA	5922
-WI	5369
-name	count	gender	year	place
-Aleona	5	F	2006	US
-Amileo	5	M	2009	US
-Amileo	6	M	2013	US
-Amilleon	5	F	2001	US
-Amilleon	5	F	2008	US
-Angleo	5	M	1987	US
-Angleo	6	M	1988	US
-Aquileo	5	M	1990	US
-Arleon	5	F	1925	US
-Bleona	5	F	2002	NY
-Bleona	5	F	2004	US
-Bleona	5	F	2009	US
-Bleona	8	F	2002	US
-Caleob	6	M	1998	US
-Carleon	5	M	1999	US
-Carleon	7	M	2001	US
-Cleo	5	M	1880	US
-Cleo	5	F	1910	LA
-Cleo	5	F	1911	OR
-Cleo	5	F	1912	UT
-Cleo	5	F	1913	CO
-Cleo	5	F	1914	CO
-Cleo	5	F	1915	CA
-Cleo	5	F	1916	ID
-Cleo	5	F	1917	MA
-Cleo	5	F	1918	OR
-Cleo	5	F	1919	AZ
-Cleo	5	F	1920	AZ
-Cleo	5	F	1921	MT
-Cleo	5	F	1922	AZ
-Cleo	5	F	1923	MT
-Cleo	5	F	1924	AZ
-Cleo	5	F	1926	MD
-Cleo	5	F	1927	ID
-Cleo	5	M	1928	CA
-Cleo	5	F	1929	SD
-Cleo	5	M	1930	FL
-Cleo	5	F	1931	MO
-Cleo	5	M	1932	ID
-Cleo	5	F	1933	ME
-Cleo	5	F	1934	MD
-Cleo	5	F	1935	ID
-Cleo	5	F	1936	FL
-Cleo	5	F	1937	DC
-Cleo	5	F	1938	IA
-Cleo	5	F	1939	MT
-Cleo	5	F	1940	NM
-Cleo	5	F	1941	AL
-Cleo	5	F	1942	CO
-Cleo	5	F	1943	CO
-COUNT(name)
-69937
-COUNT(*)
-7601706
-COUNT(name)
-2132534
-2870699
+Usage: mariadb [OPTIONS] [database]
+
+Default options are read from the following files in the given order:
+/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf 
+The following groups are read: mysql client client-server client-mariadb
+The following options may be given as the first argument:
+--print-defaults          Print the program argument list and exit.
+--no-defaults             Don't read default options from any option file.
+The following specify which files/extra groups are read (specified before remaining options):
+--defaults-file=#         Only read default options from the given file #.
+--defaults-extra-file=#   Read this file after the global files are read.
+--defaults-group-suffix=# Additionally read default groups with # appended as a suffix.
+
+  -?, --help          Display this help and exit.
+  -I, --help          Synonym for -?
+  --abort-source-on-error 
+                      Abort 'source filename' operations in case of errors
+  --auto-rehash       Enable automatic rehashing. One doesn't need to use
+                      'rehash' to get table and field completion, but startup
+                      and reconnecting may take a longer time. Disable with
+                      --disable-auto-rehash.
+                      (Defaults to on; use --skip-auto-rehash to disable.)
+  -A, --no-auto-rehash 
+                      No automatic rehashing. One has to use 'rehash' to get
+                      table and field completion. This gives a quicker start of
+                      mysql and disables rehashing on reconnect.
+  --auto-vertical-output 
+                      Automatically switch to vertical output mode if the
+                      result is wider than the terminal width.
+  -B, --batch         Don't use history file. Disable interactive behavior.
+                      (Enables --silent.)
+  --binary-as-hex     Print binary data as hex
+  --character-sets-dir=name 
+                      Directory for character set files.
+  --column-type-info  Display column type information.
+  -c, --comments      Preserve comments. Send comments to the server. The
+                      default is --skip-comments (discard comments), enable
+                      with --comments.
+  -C, --compress      Use compression in server/client protocol.
+  -#, --debug[=#]     This is a non-debug version. Catch this and exit.
+  --debug-check       Check memory and open file usage at exit.
+  -T, --debug-info    Print some debug info at exit.
+  -D, --database=name Database to use.
+  --default-character-set=name 
+                      Set the default character set.
+  --delimiter=name    Delimiter to be used.
+  -e, --execute=name  Execute command and quit. (Disables --force and history
+                      file.)
+  -E, --vertical      Print the output of a query (rows) vertically.
+  -f, --force         Continue even if we get an SQL error. Sets
+                      abort-source-on-error to 0
+  -G, --named-commands 
+                      Enable named commands. Named commands mean this program's
+                      internal commands; see mysql> help . When enabled, the
+                      named commands can be used from any line of the query,
+                      otherwise only from the first line, before an enter.
+                      Disable with --disable-named-commands. This option is
+                      disabled by default.
+  -i, --ignore-spaces Ignore space after function names.
+  --init-command=name SQL Command to execute when connecting to MySQL server.
+                      Will automatically be re-executed when reconnecting.
+  --local-infile      Enable/disable LOAD DATA LOCAL INFILE.
+  -b, --no-beep       Turn off beep on error.
+  -h, --host=name     Connect to host.
+  -H, --html          Produce HTML output.
+  -X, --xml           Produce XML output.
+  --line-numbers      Write line numbers for errors.
+                      (Defaults to on; use --skip-line-numbers to disable.)
+  -L, --skip-line-numbers 
+                      Don't write line number for errors.
+  -n, --unbuffered    Flush buffer after each query.
+  --column-names      Write column names in results.
+                      (Defaults to on; use --skip-column-names to disable.)
+  -N, --skip-column-names 
+                      Don't write column names in results.
+  --sigint-ignore     Ignore SIGINT (CTRL-C).
+  -o, --one-database  Ignore statements except those that occur while the
+                      default database is the one named at the command line.
+  --pager[=name]      Pager to use to display results. If you don't supply an
+                      option, the default pager is taken from your ENV variable
+                      PAGER. Valid pagers are less, more, cat [> filename],
+                      etc. See interactive help (\h) also. This option does not
+                      work in batch mode. Disable with --disable-pager. This
+                      option is disabled by default.
+  -p, --password[=name] 
+                      Password to use when connecting to server. If password is
+                      not given it's asked from the tty.
+  -P, --port=#        Port number to use for connection or 0 for default to, in
+                      order of preference, my.cnf, $MYSQL_TCP_PORT,
+                      /etc/services, built-in default (3306).
+  --progress-reports  Get progress reports for long running commands (like
+                      ALTER TABLE)
+                      (Defaults to on; use --skip-progress-reports to disable.)
+  --prompt=name       Set the mysql prompt to this value.
+  --protocol=name     The protocol to use for connection (tcp, socket, pipe,
+                      memory).
+  -q, --quick         Don't cache result, print it row by row. This may slow
+                      down the server if the output is suspended. Doesn't use
+                      history file.
+  -r, --raw           Write fields without conversion. Used with --batch.
+  --reconnect         Reconnect if the connection is lost. Disable with
+                      --disable-reconnect. This option is enabled by default.
+                      (Defaults to on; use --skip-reconnect to disable.)
+  -s, --silent        Be more silent. Print results with a tab as separator,
+                      each row on new line.
+  -S, --socket=name   The socket file to use for connection.
+  --ssl               Enable SSL for connection (automatically enabled with
+                      other flags).
+  --ssl-ca=name       CA file in PEM format (check OpenSSL docs, implies
+                      --ssl).
+  --ssl-capath=name   CA directory (check OpenSSL docs, implies --ssl).
+  --ssl-cert=name     X509 cert in PEM format (implies --ssl).
+  --ssl-cipher=name   SSL cipher to use (implies --ssl).
+  --ssl-key=name      X509 key in PEM format (implies --ssl).
+  --ssl-crl=name      Certificate revocation list (implies --ssl).
+  --ssl-crlpath=name  Certificate revocation list path (implies --ssl).
+  --ssl-verify-server-cert 
+                      Verify server's "Common Name" in its cert against
+                      hostname used when connecting. This option is disabled by
+                      default.
+  -t, --table         Output in table format.
+  --tee=name          Append everything into outfile. See interactive help (\h)
+                      also. Does not work in batch mode. Disable with
+                      --disable-tee. This option is disabled by default.
+  -u, --user=name     User for login if not current user.
+  -U, --safe-updates  Only allow UPDATE and DELETE that uses keys.
+  -U, --i-am-a-dummy  Synonym for option --safe-updates, -U.
+  -v, --verbose       Write more. (-v -v -v gives the table output format).
+  -V, --version       Output version information and exit.
+  -w, --wait          Wait and retry if connection is down.
+  --connect-timeout=# Number of seconds before connection timeout.
+  --max-allowed-packet=# 
+                      The maximum packet length to send to or receive from
+                      server.
+  --net-buffer-length=# 
+                      The buffer size for TCP/IP and socket communication.
+  --select-limit=#    Automatic limit for SELECT when using --safe-updates.
+  --max-join-size=#   Automatic limit for rows in a join when using
+                      --safe-updates.
+  --secure-auth       Refuse client connecting to server if it uses old
+                      (pre-4.1.1) protocol.
+  --server-arg=name   Send embedded server this as a parameter.
+  --show-warnings     Show warnings after every statement.
+  --plugin-dir=name   Directory for client-side plugins.
+  --default-auth=name Default authentication client-side plugin to use.
+  --binary-mode       By default, ASCII '\0' is disallowed and '\r\n' is
+                      translated to '\n'. This switch turns off both features,
+                      and also turns off parsing of all clientcommands except
+                      \C and DELIMITER, in non-interactive mode (for input
+                      piped to mysql or loaded using the 'source' command).
+                      This is necessary when processing output from mysqlbinlog
+                      that may contain blobs.
+
+Variables (--variable-name=value)
+and boolean options {FALSE|TRUE}  Value (after reading options)
+--------------------------------- ----------------------------------------
+abort-source-on-error             FALSE
+auto-rehash                       TRUE
+auto-vertical-output              FALSE
+binary-as-hex                     FALSE
+character-sets-dir                (No default value)
+column-type-info                  FALSE
+comments                          FALSE
+compress                          FALSE
+debug-check                       FALSE
+debug-info                        FALSE
+database                          (No default value)
+default-character-set             auto
+delimiter                         ;
+vertical                          FALSE
+force                             FALSE
+named-commands                    FALSE
+ignore-spaces                     FALSE
+init-command                      (No default value)
+local-infile                      FALSE
+no-beep                           FALSE
+host                              courses
+html                              FALSE
+xml                               FALSE
+line-numbers                      TRUE
+unbuffered                        FALSE
+column-names                      TRUE
+sigint-ignore                     FALSE
+port                              0
+progress-reports                  FALSE
+prompt                            \N [\d]> 
+quick                             FALSE
+raw                               FALSE
+reconnect                         FALSE
+socket                            (No default value)
+ssl                               FALSE
+ssl-ca                            (No default value)
+ssl-capath                        (No default value)
+ssl-cert                          (No default value)
+ssl-cipher                        (No default value)
+ssl-key                           (No default value)
+ssl-crl                           (No default value)
+ssl-crlpath                       (No default value)
+ssl-verify-server-cert            FALSE
+table                             FALSE
+user                              z1911688
+safe-updates                      FALSE
+i-am-a-dummy                      FALSE
+connect-timeout                   0
+max-allowed-packet                16777216
+net-buffer-length                 16384
+select-limit                      1000
+max-join-size                     1000000
+secure-auth                       FALSE
+show-warnings                     FALSE
+plugin-dir                        (No default value)
+default-auth                      (No default value)
+binary-mode                       FALSE
+MariaDB [z1911688]> \.ASSIGN05.sql
+ERROR: Usage: \. <filename> | source <filename>
+MariaDB [z1911688]> \. ASSIGN05.sql
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
++--------------------+
+| Tables_in_BabyName |
++--------------------+
+| BabyName           |
++--------------------+
+1 row in set (0.001 sec)
+
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(15) | NO   | PRI | NULL    |       |
+| count  | int(11)     | YES  |     | NULL    |       |
+| gender | char(1)     | NO   | PRI | NULL    |       |
+| year   | smallint(6) | NO   | PRI | NULL    |       |
+| place  | char(2)     | NO   | PRI | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.001 sec)
+
++--------------+
+| name         |
++--------------+
+| Aadam        |
+| Aadil        |
+| Aaditya      |
+| Aailyah      |
+| Aaisha       |
+| Aajah        |
+| Aakash       |
+| Aalayah      |
+| Aaleah       |
+| Aaleyah      |
+| Aalia        |
+| Aaliah       |
+| Aaliayah     |
+| Aaliya       |
+| Aaliyah      |
+| Aaliyha      |
+| Aalliyah     |
+| Aalyah       |
+| Aalyiah      |
+| Aamina       |
+| Aaminah      |
+| Aamir        |
+| Aanchal      |
+| Aanisah      |
+| Aaniyah      |
+| Aanya        |
+| Aanyah       |
+| Aaran        |
+| Aaren        |
+| Aareon       |
+| Aariana      |
+| Aarianna     |
+| Aaric        |
+| Aariel       |
+| Aarika       |
+| Aarin        |
+| Aarion       |
+| Aariona      |
+| Aarionna     |
+| Aaris        |
+| Aarohi       |
+| Aaron        |
+| Aaronmichael |
+| Aarron       |
+| Aarthi       |
+| Aarti        |
+| Aaryn        |
+| Aasha        |
+| Aashna       |
+| Aasim        |
++--------------+
+50 rows in set (0.000 sec)
+
++------+
+| year |
++------+
+| 1880 |
+| 1881 |
+| 1882 |
+| 1883 |
+| 1884 |
+| 1885 |
+| 1886 |
+| 1887 |
+| 1888 |
+| 1889 |
+| 1890 |
+| 1891 |
+| 1892 |
+| 1893 |
+| 1894 |
+| 1895 |
+| 1896 |
+| 1897 |
+| 1898 |
+| 1899 |
+| 1900 |
+| 1901 |
+| 1902 |
+| 1903 |
+| 1904 |
+| 1905 |
+| 1906 |
+| 1907 |
+| 1908 |
+| 1909 |
+| 1910 |
+| 1911 |
+| 1912 |
+| 1913 |
+| 1914 |
+| 1915 |
+| 1916 |
+| 1917 |
+| 1918 |
+| 1919 |
+| 1920 |
+| 1921 |
+| 1922 |
+| 1923 |
+| 1924 |
+| 1925 |
+| 1926 |
+| 1927 |
+| 1928 |
+| 1929 |
++------+
+50 rows in set (0.000 sec)
+
++--------+----------+-------+
+| gender | name     | count |
++--------+----------+-------+
+| M      | Michael  | 67731 |
+| F      | Jennifer | 50562 |
++--------+----------+-------+
+2 rows in set (0.000 sec)
+
++-------+----------------------+
+| place | COUNT(DISTINCT NAME) |
++-------+----------------------+
+| AK    |                 1583 |
+| AL    |                 6501 |
+| AR    |                 4825 |
+| AZ    |                 5500 |
+| CA    |                18986 |
+| CO    |                 4953 |
+| CT    |                 3531 |
+| DC    |                 2622 |
+| DE    |                 1677 |
+| FL    |                10820 |
+| GA    |                 9467 |
+| HI    |                 2870 |
+| IA    |                 4257 |
+| ID    |                 2874 |
+| IL    |                10847 |
+| IN    |                 6392 |
+| KS    |                 4359 |
+| KY    |                 5178 |
+| LA    |                 6957 |
+| MA    |                 5185 |
+| MD    |                 5455 |
+| ME    |                 2146 |
+| MI    |                 8567 |
+| MN    |                 5374 |
+| MO    |                 6301 |
+| MS    |                 5486 |
+| MT    |                 2188 |
+| NC    |                 8598 |
+| ND    |                 2282 |
+| NE    |                 3383 |
+| NH    |                 1756 |
+| NJ    |                 7428 |
+| NM    |                 3333 |
+| NV    |                 2861 |
+| NY    |                14101 |
+| OH    |                 9066 |
+| OK    |                 5548 |
+| OR    |                 4143 |
+| PA    |                 8851 |
+| RI    |                 1795 |
+| SC    |                 5632 |
+| SD    |                 2289 |
+| TN    |                 6750 |
+| TX    |                16768 |
+| US    |                95025 |
+| UT    |                 4489 |
+| VA    |                 7093 |
+| VT    |                 1358 |
+| WA    |                 5922 |
+| WI    |                 5369 |
++-------+----------------------+
+50 rows in set (0.000 sec)
+
++----------+-------+--------+------+-------+
+| name     | count | gender | year | place |
++----------+-------+--------+------+-------+
+| Aleona   |     5 | F      | 2006 | US    |
+| Amileo   |     5 | M      | 2009 | US    |
+| Amileo   |     6 | M      | 2013 | US    |
+| Amilleon |     5 | F      | 2001 | US    |
+| Amilleon |     5 | F      | 2008 | US    |
+| Angleo   |     5 | M      | 1987 | US    |
+| Angleo   |     6 | M      | 1988 | US    |
+| Aquileo  |     5 | M      | 1990 | US    |
+| Arleon   |     5 | F      | 1925 | US    |
+| Bleona   |     5 | F      | 2002 | NY    |
+| Bleona   |     5 | F      | 2004 | US    |
+| Bleona   |     5 | F      | 2009 | US    |
+| Bleona   |     8 | F      | 2002 | US    |
+| Caleob   |     6 | M      | 1998 | US    |
+| Carleon  |     5 | M      | 1999 | US    |
+| Carleon  |     7 | M      | 2001 | US    |
+| Cleo     |     5 | M      | 1880 | US    |
+| Cleo     |     5 | F      | 1910 | LA    |
+| Cleo     |     5 | F      | 1911 | OR    |
+| Cleo     |     5 | F      | 1912 | UT    |
+| Cleo     |     5 | F      | 1913 | CO    |
+| Cleo     |     5 | F      | 1914 | CO    |
+| Cleo     |     5 | F      | 1915 | CA    |
+| Cleo     |     5 | F      | 1916 | ID    |
+| Cleo     |     5 | F      | 1917 | MA    |
+| Cleo     |     5 | F      | 1918 | OR    |
+| Cleo     |     5 | F      | 1919 | AZ    |
+| Cleo     |     5 | F      | 1920 | AZ    |
+| Cleo     |     5 | F      | 1921 | MT    |
+| Cleo     |     5 | F      | 1922 | AZ    |
+| Cleo     |     5 | F      | 1923 | MT    |
+| Cleo     |     5 | F      | 1924 | AZ    |
+| Cleo     |     5 | F      | 1926 | MD    |
+| Cleo     |     5 | F      | 1927 | ID    |
+| Cleo     |     5 | M      | 1928 | CA    |
+| Cleo     |     5 | F      | 1929 | SD    |
+| Cleo     |     5 | M      | 1930 | FL    |
+| Cleo     |     5 | F      | 1931 | MO    |
+| Cleo     |     5 | M      | 1932 | ID    |
+| Cleo     |     5 | F      | 1933 | ME    |
+| Cleo     |     5 | F      | 1934 | MD    |
+| Cleo     |     5 | F      | 1935 | ID    |
+| Cleo     |     5 | F      | 1936 | FL    |
+| Cleo     |     5 | F      | 1937 | DC    |
+| Cleo     |     5 | F      | 1938 | IA    |
+| Cleo     |     5 | F      | 1939 | MT    |
+| Cleo     |     5 | F      | 1940 | NM    |
+| Cleo     |     5 | F      | 1941 | AL    |
+| Cleo     |     5 | F      | 1942 | CO    |
+| Cleo     |     5 | F      | 1943 | CO    |
++----------+-------+--------+------+-------+
+50 rows in set (0.000 sec)
+
++-------------+
+| COUNT(name) |
++-------------+
+|       69937 |
++-------------+
+1 row in set (0.000 sec)
+
++----------+
+| COUNT(*) |
++----------+
+|  7601706 |
++----------+
+1 row in set (0.000 sec)
+
++-------------+
+| COUNT(name) |
++-------------+
+|     2132534 |
+|     2870699 |
++-------------+
+2 rows in set (0.000 sec)
+
+MariaDB [BabyName]> exit
